@@ -42,7 +42,7 @@ window.addEventListener('load', function(){
                 setTimeout(function(){
                     h1.innerHTML=String(fonts[i]).replace('+',' ');
                     h1.style.fontFamily=String(fonts[i]).replace(/\+/g,' ');
-                }, i*900);
+                }, i*900); //how fast to cycle through fonts
             }(i));
         }
     }
