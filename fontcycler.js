@@ -7,7 +7,7 @@ var url = [];
 
 // push google font URL, plus font names from fontlist to url array
 for (var i=0;i<fonts.length;i++){
-	url.push("https://fonts.googleapis.com/css?family="+fonts[i]);
+    url.push("https://fonts.googleapis.com/css?family="+fonts[i]);
 }
 
 // font link appending fn
@@ -22,7 +22,7 @@ function appendStyle(pathToStyle) {
 
 // append google font links to document
 for (var i =0;i<url.length;i++){
-	appendStyle(url[i]);
+    appendStyle(url[i]);
 }
 
 // =========================
@@ -30,7 +30,7 @@ for (var i =0;i<url.length;i++){
 // =========================
 
 // get text elements
-var h1 = document.getElementsByTagName('h1')[0];
+var fcjs = document.getElementsByClassName('fcjs');
 
 // view fonts after page load (or else we'll miss the first one or two fonts)
 window.addEventListener('load', function(){
@@ -40,8 +40,10 @@ window.addEventListener('load', function(){
         for (var i =0;i<url.length;i++){
             (function(i){
                 setTimeout(function(){
-                    h1.innerHTML=String(fonts[i]).replace('+',' ');
-                    h1.style.fontFamily=String(fonts[i]).replace(/\+/g,' ');
+                    for (var j =0;j<fcjs.length;j++){
+                        fcjs[j].innerHTML=String(fonts[i]).replace(/\+/g,' ');
+                        fcjs[j].style.fontFamily=String(fonts[i]).replace(/\+/g,' ');
+                    }
                 }, i*900); //how fast to cycle through fonts
             }(i));
         }
