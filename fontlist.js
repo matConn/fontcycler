@@ -1,6 +1,6 @@
 // list of google fonts by name.
 // This file must be linked to document before fontcycler.js.
-fonts = [
+fcjs_fonts = [
     'ABeeZee',
     'Abel',
     'Abril+Fatface',
