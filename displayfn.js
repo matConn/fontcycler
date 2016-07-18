@@ -8,7 +8,9 @@
 // create context menu to be used on text click
 var fcjs_contextMenu_inner = [
     '<div class="fcjs_contextMenu">',
-    '<p class="fcjs_fontName"></div>',
+    '<p class="fcjs_fontName"></p>',
+    '<a class="fcjs_cycleLeft"> < </a>', //WORK ON THIS
+    '<a class="fcjs_cycleRight"> > </a>',
     '</div>'
 ].join('');
 
@@ -50,7 +52,7 @@ var fcjs_fontName = document.getElementsByClassName('fcjs_fontName')[0];
 // getting event target
 function fcjs_textSelector(event) {
     var fcjs_text = event.target;
-    if(fcjs_text.hasAttribute('class','fcjs')){ //CHECK FOR FCJS CLASS
+    if(fcjs_text.classList.contains('fcjs')){
         fcjs_text.style.fontFamily=String(fcjs_fonts[0]).replace(/\+/g,' ');//ADD LOOPING FN EVENTUALLY
         fcjs_fontName.innerHTML=String(fcjs_text.style.fontFamily);
         fcjs_text.appendChild(fcjs_contextMenu);

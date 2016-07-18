@@ -15,9 +15,11 @@
 	font-weight: 400;
 	font-size: 16px;
 	text-align: center;
+	cursor: default;
 	margin: 0;
-	transition: 0.3s ease-out;
+	transition: 0.2s ease-out;
 	opacity: 0;
+	z-index: 9999 !important;
 }
 
 .fcjs_contextMenu:before {
@@ -38,10 +40,11 @@
 	font-weight: 400;
 	font-size: 16px;
 	text-align: center;
+	color: black;
 	margin: 0;
 }
-/*#fcjs_contextMenu:before {
-	width: 20px;
-	height: 20px;
 
-}*/
+.fcjs_cycleLeft, .fcjs_cycleRight{
+	cursor: pointer !important;
+	color: black !important;
+}
