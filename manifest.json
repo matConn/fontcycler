@@ -14,7 +14,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "file://*/*"],
-      "css" : ["contextmenu.css"]
+      "css" : ["context_menu/style.css"]
     }
 ],
   "browser_action": {

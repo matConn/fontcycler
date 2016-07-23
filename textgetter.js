@@ -38,6 +38,7 @@ var fcjs_ul = document.getElementsByTagName('ul');
 var fcjs_ol = document.getElementsByTagName('ol');
 var fcjs_li = document.getElementsByTagName('li');
 var fcjs_a = document.getElementsByTagName('a');
+var fcjs_a = document.getElementsByTagName('span');
 
 var fcjs_h1 = document.getElementsByTagName('h1');
 var fcjs_h2 = document.getElementsByTagName('h2');

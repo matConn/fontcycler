@@ -11,15 +11,19 @@
 	border: solid 1px grey;
 	background-color: white;
 	padding: 10px;
-	font-family: sans-serif;
+	font-family: sans-serif !important;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 12px;
 	text-align: center;
 	cursor: default;
 	margin: 0;
 	transition: 0.2s ease-out;
 	opacity: 0;
 	z-index: 9999 !important;
+	text-align: left;
+/*	-webkit-box-shadow: 0 10px 6px -6px #000;
+	-moz-box-shadow: 0 10px 6px -6px #000;
+	box-shadow: 0 10px 6px -6px #000;*/
 }
 
 .fcjs_contextMenu:before {
@@ -44,7 +48,7 @@
 	margin: 0;
 }
 
-.fcjs_cycleLeft, .fcjs_cycleRight{
+.fcjs_prev, .fcjs_next, .fcjs_random, .fcjs_play{
 	cursor: pointer !important;
 	color: black !important;
 }
