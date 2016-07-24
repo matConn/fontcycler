@@ -5,7 +5,6 @@
 function fcjs_textSelector(event) {
     var fcjs_text = event.target;
     if(fcjs_text.classList.contains('fcjs')){
-        // fcjs_fontName.innerHTML=String(fcjs_text.style.fontFamily);
         fcjs_text.appendChild(fcjs_contextMenu);
 
     // prev/next btn fn
@@ -36,7 +35,7 @@ function fcjs_textSelector(event) {
                 setTimeout(function(){
                     fcjs_text.style.fontFamily=String(fcjs_fonts[i]).replace(/\+/g,' ');
                     fcjs_fontName.innerHTML=String(fcjs_fonts[i]).replace(/\+/g,' ');
-                }, 200 * i);
+                }, 500 * i);
             }(i));
         }
     });
