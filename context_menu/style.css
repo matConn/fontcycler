@@ -56,7 +56,11 @@
 	background: none;
 }
 
-.fcjs_prev, .fcjs_next, .fcjs_random, .fcjs_play{
+.fcjs_prev, .fcjs_next, .fcjs_random, .fcjs_play, .fcjs_pause{
 	cursor: pointer !important;
 	color: black !important;
+}
+
+.fcjs_pause {
+	display: none;
 }

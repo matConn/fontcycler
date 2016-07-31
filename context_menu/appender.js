@@ -9,8 +9,9 @@
 var fcjs_contextMenu_inner = [
     '<div class="fcjs_contextMenu">',
     '<p class="fcjs_fontName">&nbsp;</p>',
-    '<a class="fcjs_prev"> Prev </a>', //WORK ON THIS
+    '<a class="fcjs_prev"> Prev </a>',
     '<a class="fcjs_play"> Play </a>',
+    '<a class="fcjs_pause"> Pause </a>',
     '<a class="fcjs_next"> Next </a>',
     '<a class="fcjs_random"> Random </a>',
     '</div>'
@@ -33,5 +34,6 @@ var fcjs_fontName = document.getElementsByClassName('fcjs_fontName')[0];
 var fcjs_prev = document.getElementsByClassName('fcjs_prev')[0];
 var fcjs_next = document.getElementsByClassName('fcjs_next')[0];
 var fcjs_play = document.getElementsByClassName('fcjs_play')[0];
+var fcjs_pause = document.getElementsByClassName('fcjs_pause')[0];
 
 var fontCounter = 0;

@@ -30,15 +30,42 @@ function fcjs_textSelector(event) {
     // play btn fn
     fcjs_play.addEventListener('click',function(){
 
-        for (var i =0;i<=fcjs_fonts.length;i++){
-            (function(i){
-                setTimeout(function(){
-                    fcjs_text.style.fontFamily=String(fcjs_fonts[i]).replace(/\+/g,' ');
-                    fcjs_fontName.innerHTML=String(fcjs_fonts[i]).replace(/\+/g,' ');
-                }, 500 * i);
-            }(i));
-        }
+    	//hide play, display pause
+    	fcjs_play.style.display='none';
+    	fcjs_pause.style.display='inline';
+
+    	// disable prev and next, reduce opacity
+    	fcjs_next.style.pointerEvents='none';
+    	fcjs_next.style.opacity=0.5;
+
+    	fcjs_prev.style.pointerEvents='none';
+    	fcjs_prev.style.opacity=0.5;
+
+    	// increment fontcounter, display fonts
+		var fontCycle = setInterval(function(){
+			fontCounter++;
+			fcjs_text.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+			fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+		},500);
+
+       	// pause btn fn
+        fcjs_pause.addEventListener('click',function(){
+	    	fcjs_play.style.display='inline';
+	    	fcjs_pause.style.display='none';
+
+	    	// enable prev and next, 100% opacity
+	    	fcjs_next.style.pointerEvents='auto';
+	    	fcjs_next.style.opacity=1;
+
+	    	fcjs_prev.style.pointerEvents='auto';
+	    	fcjs_prev.style.opacity=1;
+
+	    	// pause fontcylcer
+    		clearInterval(fontCycle);
+    	});
+
     });
+
 
         
         // animation
