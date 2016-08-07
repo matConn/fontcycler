@@ -69,10 +69,10 @@ function fcjs_textSelector(event) {
 
         
         // animation
-        fcjs_contextMenu.style.opacity=0;
+        fcjs_contextMenu.style.opacity=1;
         setTimeout(function(){
-            fcjs_contextMenu.style.opacity=1;
-        },100)
+            fcjs_contextMenu.style.opacity=0;
+        },1000)
     }
 }
 

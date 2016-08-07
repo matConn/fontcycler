@@ -39,6 +39,10 @@
     left: 50%;
 }
 
+.fcjs_contextMenu:hover {
+	opacity: 1 !important;
+}
+
 .fcjs_contextMenu a::selection {
 	background: none;
 }
