@@ -31,7 +31,7 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['sass', 'scripts', 'watch'], function(){
+gulp.task('default', ['sass', 'scripts'], function(){
     gulp.src(['background.js', 'manifest.json'])
         .pipe(gulp.dest('public'));
 });

@@ -810,3 +810,124 @@ fcjs_pusher(fcjs_h6);
 for(var i=0;i<fcjs_allText.length;i++){
     fcjs_allText[i].classList+=" fcjs";
 }
+// ==========================
+// font display functionality
+// ==========================
+
+// font cycler context menu
+// ========================
+
+// create context menu to be used on text click
+var fcjs_contextMenu_inner = [
+    '<div class="fcjs_contextMenu">',
+    '<p class="fcjs_fontName">FontCycler</p>',
+    '<a class="fcjs_prev"> &#9664;&#9664; </a>',
+    '<a class="fcjs_play"> &#9658; </a>',
+    '<a class="fcjs_pause"> &#10074;&#10074; </a>',
+    '<a class="fcjs_next"> &#9658;&#9658; </a>',
+    '</div>'
+].join('');
+
+// container for contextmenu
+var fcjs_hidden = document.createElement('div');
+fcjs_hidden.setAttribute('class','fcjs_hidden');
+fcjs_hidden.innerHTML=fcjs_contextMenu_inner;
+
+// append contextmenu
+document.getElementsByTagName('body')[0].appendChild(fcjs_hidden);
+
+// get all elements with fcjs class
+var fcjs = document.getElementsByClassName('fcjs');
+
+var fcjs_contextMenu = document.getElementsByClassName('fcjs_contextMenu')[0];
+var fcjs_fontName = document.getElementsByClassName('fcjs_fontName')[0];
+
+var fcjs_prev = document.getElementsByClassName('fcjs_prev')[0];
+var fcjs_next = document.getElementsByClassName('fcjs_next')[0];
+var fcjs_play = document.getElementsByClassName('fcjs_play')[0];
+var fcjs_pause = document.getElementsByClassName('fcjs_pause')[0];
+
+var fontCounter = 0;
+// font cycling controls
+// =====================
+
+// getting event target
+function fcjs_textSelector(event) {
+    var fcjs_text = event.target;
+    if(fcjs_text.classList.contains('fcjs')){
+        fcjs_text.appendChild(fcjs_contextMenu);
+
+    // prev/next btn fn
+    function prevNextBtns(btn){
+        return btn.addEventListener('click',function(){
+
+            if ( btn == fcjs_next && fontCounter < fcjs_fonts.length ) {
+                fontCounter++;
+            } else if ( btn == fcjs_prev && fontCounter > 0) {
+                fontCounter--;
+            }
+
+            fcjs_text.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+            fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+
+            console.log(fontCounter);
+
+        });
+    }
+    
+    prevNextBtns(fcjs_next);
+    prevNextBtns(fcjs_prev);
+
+    // play btn fn
+    fcjs_play.addEventListener('click',function(){
+
+    	//hide play, display pause
+    	fcjs_play.style.display='none';
+    	fcjs_pause.style.display='inline';
+
+    	// disable prev and next, reduce opacity
+    	fcjs_next.style.pointerEvents='none';
+    	fcjs_next.style.opacity=0.5;
+
+    	fcjs_prev.style.pointerEvents='none';
+    	fcjs_prev.style.opacity=0.5;
+
+    	// increment fontcounter, display fonts
+		var fontCycle = setInterval(function(){
+			fontCounter++;
+			fcjs_text.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+			fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+		},500);
+
+       	// pause btn fn
+        fcjs_pause.addEventListener('click',function(){
+	    	fcjs_play.style.display='inline';
+	    	fcjs_pause.style.display='none';
+
+	    	// enable prev and next, 100% opacity
+	    	fcjs_next.style.pointerEvents='auto';
+	    	fcjs_next.style.opacity=1;
+
+	    	fcjs_prev.style.pointerEvents='auto';
+	    	fcjs_prev.style.opacity=1;
+
+	    	// pause fontcylcer
+    		clearInterval(fontCycle);
+    	});
+
+    });
+
+
+        
+        // animation
+        fcjs_contextMenu.style.opacity=1;
+        setTimeout(function(){
+            fcjs_contextMenu.style.opacity=0;
+        },1000)
+    }
+}
+
+// calling target getter on click
+document.addEventListener('click',function(){
+    fcjs_textSelector(event);
+});

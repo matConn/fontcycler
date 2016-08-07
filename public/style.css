@@ -51,5 +51,11 @@
   cursor: pointer !important;
   color: black !important; }
 
+.fcjs_prev, .fcjs_next {
+  font-size: 12px; }
+
+.fcjs_play, .fcjs_pause {
+  margin-left: 6px; }
+
 .fcjs_pause {
   display: none; }
