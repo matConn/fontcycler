@@ -1,0 +1,55 @@
+.fcjs_hidden {
+  display: none; }
+
+.fcjs {
+  cursor: context-menu; }
+
+.fcjs_contextMenu {
+  position: absolute;
+  border: solid 1px grey;
+  background-color: white;
+  padding: 10px;
+  font-family: sans-serif !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  cursor: default;
+  margin: 0;
+  transition: 0.2s ease-out;
+  opacity: 0;
+  z-index: 9999 !important;
+  text-align: left; }
+  .fcjs_contextMenu:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg) translateX(-50%);
+    background-color: white;
+    border-top: solid 1px grey;
+    border-left: solid 1px grey;
+    position: absolute;
+    top: -2px;
+    left: 50%; }
+  .fcjs_contextMenu:hover {
+    opacity: 1 !important; }
+  .fcjs_contextMenu a::selection {
+    background: none; }
+
+.fcjs_fontName {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: black;
+  margin: 0; }
+  .fcjs_fontName::selection {
+    background: none; }
+
+.fcjs_prev, .fcjs_next, .fcjs_random, .fcjs_play, .fcjs_pause {
+  cursor: pointer !important;
+  color: black !important; }
+
+.fcjs_pause {
+  display: none; }

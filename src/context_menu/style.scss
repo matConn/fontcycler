@@ -23,27 +23,28 @@
 	opacity: 0;
 	z-index: 9999 !important;
 	text-align: left;
-}
+	
+	&:before {
+		content: '';
+		width: 10px;
+		height: 10px;
+		transform: rotate(45deg) translateX(-50%);
+		background-color: white;
+		border-top: solid 1px grey;
+		border-left: solid 1px grey;
+		position: absolute;
+		top: -2px;
+	    left: 50%;
+	}
 
-.fcjs_contextMenu:before {
-	content: '';
-	width: 10px;
-	height: 10px;
-	transform: rotate(45deg) translateX(-50%);
-	background-color: white;
-	border-top: solid 1px grey;
-	border-left: solid 1px grey;
-	position: absolute;
-	top: -2px;
-    left: 50%;
-}
+	&:hover {
+		opacity: 1 !important;
+	}
 
-.fcjs_contextMenu:hover {
-	opacity: 1 !important;
-}
+	a::selection {
+		background: none;
+	}
 
-.fcjs_contextMenu a::selection {
-	background: none;
 }
 
 .fcjs_fontName{
@@ -53,10 +54,10 @@
 	text-align: center;
 	color: black;
 	margin: 0;
-}
 
-.fcjs_fontName::selection{
-	background: none;
+	&::selection {
+		background: none;
+	}
 }
 
 .fcjs_prev, .fcjs_next, .fcjs_random, .fcjs_play, .fcjs_pause{

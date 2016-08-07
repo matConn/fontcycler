@@ -11,16 +11,17 @@ function fcjs_textSelector(event) {
     function prevNextBtns(btn){
         return btn.addEventListener('click',function(){
 
-            if(btn==fcjs_next){
+            if ( btn == fcjs_next && fontCounter < fcjs_fonts.length ) {
                 fontCounter++;
-            } else if(btn==fcjs_prev){
+            } else if ( btn == fcjs_prev && fontCounter > 0) {
                 fontCounter--;
             }
 
             fcjs_text.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
             fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
 
-            console.log(fcjs_fonts[fontCounter]);
+            console.log(fontCounter);
+
         });
     }
     
