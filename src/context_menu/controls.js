@@ -1,11 +1,27 @@
 // font cycling controls
 // =====================
 
+var fcjs_active;
+
 // getting event target
 function fcjs_textSelector(event) {
     var fcjs_text = event.target;
+
     if(fcjs_text.classList.contains('fcjs')){
-        fcjs_text.appendChild(fcjs_contextMenu);
+
+        for(var i=0; i<fcjs_allText.length;i++){
+
+            if(fcjs_allText[i].classList.contains('fcjs_active')){
+                fcjs_allText[i].classList.remove("fcjs_active");
+            }
+        }
+
+        fcjs_text.classList+=" fcjs_active";
+
+        fcjs_active = document.getElementsByClassName('fcjs_active')[0];
+
+        fcjs_active.appendChild(fcjs_contextMenu);
+        fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
 
     // prev/next btn fn
     function prevNextBtns(btn){
@@ -17,14 +33,12 @@ function fcjs_textSelector(event) {
                 fontCounter--;
             }
 
-            fcjs_text.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+            fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
             fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
-
-            console.log(fontCounter);
 
         });
     }
-    
+        
     prevNextBtns(fcjs_next);
     prevNextBtns(fcjs_prev);
 
@@ -42,10 +56,13 @@ function fcjs_textSelector(event) {
     	fcjs_prev.style.pointerEvents='none';
     	fcjs_prev.style.opacity=0.5;
 
+        fcjs_list.style.pointerEvents='none';
+        fcjs_list.style.opacity=0.5;
+
     	// increment fontcounter, display fonts
 		var fontCycle = setInterval(function(){
 			fontCounter++;
-			fcjs_text.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+			fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
 			fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
 		},500);
 
@@ -60,6 +77,9 @@ function fcjs_textSelector(event) {
 
 	    	fcjs_prev.style.pointerEvents='auto';
 	    	fcjs_prev.style.opacity=1;
+
+            fcjs_list.style.pointerEvents='auto';
+            fcjs_list.style.opacity=1;
 
 	    	// pause fontcylcer
     		clearInterval(fontCycle);

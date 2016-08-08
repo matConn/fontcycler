@@ -53,16 +53,17 @@
 	font-size: 16px;
 	text-align: center;
 	color: black;
-	margin: 0;
+	margin: 0 !important;
 
 	&::selection {
 		background: none;
 	}
 }
 
-.fcjs_prev, .fcjs_next, .fcjs_random, .fcjs_play, .fcjs_pause{
+.fcjs_prev, .fcjs_next, .fcjs_random, .fcjs_play, .fcjs_pause, .fcjs_list{
 	cursor: pointer !important;
 	color: black !important;
+	text-decoration: none !important;
 }
 
 .fcjs_prev, .fcjs_next {
@@ -71,6 +72,10 @@
 
 .fcjs_play, .fcjs_pause {
 	margin-left: 6px;
+}
+
+.fcjs_list {
+	font-size: 15px;
 }
 
 .fcjs_pause {

@@ -13,6 +13,7 @@ var fcjs_contextMenu_inner = [
     '<a class="fcjs_play"> &#9658; </a>',
     '<a class="fcjs_pause"> &#10074;&#10074; </a>',
     '<a class="fcjs_next"> &#9658;&#9658; </a>',
+    '<a class="fcjs_list"> &#9776; </a>',
     '</div>'
 ].join('');
 
@@ -34,5 +35,6 @@ var fcjs_prev = document.getElementsByClassName('fcjs_prev')[0];
 var fcjs_next = document.getElementsByClassName('fcjs_next')[0];
 var fcjs_play = document.getElementsByClassName('fcjs_play')[0];
 var fcjs_pause = document.getElementsByClassName('fcjs_pause')[0];
+var fcjs_list = document.getElementsByClassName('fcjs_list')[0];
 
 var fontCounter = 0;
