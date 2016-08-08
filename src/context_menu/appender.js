@@ -37,4 +37,10 @@ var fcjs_play = document.getElementsByClassName('fcjs_play')[0];
 var fcjs_pause = document.getElementsByClassName('fcjs_pause')[0];
 var fcjs_list = document.getElementsByClassName('fcjs_list')[0];
 
+// disable anchors
+for(var i = 0; i < fcjs_a.length; i++){
+	fcjs_a[i].removeAttribute('href');
+	fcjs_a[i].removeAttribute('target');
+}
+
 var fontCounter = 0;

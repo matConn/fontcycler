@@ -64,7 +64,7 @@ function fcjs_textSelector(event) {
 			fontCounter++;
 			fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
 			fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
-		},500);
+		},700);
 
        	// pause btn fn
         fcjs_pause.addEventListener('click',function(){

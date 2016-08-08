@@ -856,6 +856,12 @@ var fcjs_play = document.getElementsByClassName('fcjs_play')[0];
 var fcjs_pause = document.getElementsByClassName('fcjs_pause')[0];
 var fcjs_list = document.getElementsByClassName('fcjs_list')[0];
 
+// disable anchors
+for(var i = 0; i < fcjs_a.length; i++){
+	fcjs_a[i].removeAttribute('href');
+	fcjs_a[i].removeAttribute('target');
+}
+
 var fontCounter = 0;
 // font cycling controls
 // =====================
@@ -923,7 +929,7 @@ function fcjs_textSelector(event) {
 			fontCounter++;
 			fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
 			fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
-		},500);
+		},700);
 
        	// pause btn fn
         fcjs_pause.addEventListener('click',function(){
