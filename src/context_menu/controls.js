@@ -3,6 +3,22 @@
 
 var fcjs_active;
 
+// prev/next btn fn
+function prevNextBtns(btn){
+    return btn.addEventListener('click',function(){
+
+        if ( btn == fcjs_next && fontCounter < fcjs_fonts.length ) {
+            fontCounter++;
+        } else if ( btn == fcjs_prev && fontCounter > 0) {
+            fontCounter--;
+        }
+
+        fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+        fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
+
+    });
+}
+
 // getting event target
 function fcjs_textSelector(event) {
     var fcjs_text = event.target;
@@ -22,22 +38,6 @@ function fcjs_textSelector(event) {
 
         fcjs_active.appendChild(fcjs_contextMenu);
         fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
-
-    // prev/next btn fn
-    function prevNextBtns(btn){
-        return btn.addEventListener('click',function(){
-
-            if ( btn == fcjs_next && fontCounter < fcjs_fonts.length ) {
-                fontCounter++;
-            } else if ( btn == fcjs_prev && fontCounter > 0) {
-                fontCounter--;
-            }
-
-            fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
-            fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
-
-        });
-    }
         
     prevNextBtns(fcjs_next);
     prevNextBtns(fcjs_prev);
