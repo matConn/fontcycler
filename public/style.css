@@ -50,7 +50,8 @@
 .fcjs_prev, .fcjs_next, .fcjs_random, .fcjs_play, .fcjs_pause, .fcjs_list {
   cursor: pointer !important;
   color: black !important;
-  text-decoration: none !important; }
+  text-decoration: none !important;
+  border: none !important; }
 
 .fcjs_prev, .fcjs_next {
   font-size: 12px; }
