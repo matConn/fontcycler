@@ -56,8 +56,8 @@ function fcjs_textSelector(event) {
     	fcjs_prev.style.pointerEvents='none';
     	fcjs_prev.style.opacity=0.5;
 
-        fcjs_list.style.pointerEvents='none';
-        fcjs_list.style.opacity=0.5;
+        // fcjs_list.style.pointerEvents='none';
+        // fcjs_list.style.opacity=0.5;
 
     	// increment fontcounter, display fonts
 		var fontCycle = setInterval(function(){
@@ -78,8 +78,8 @@ function fcjs_textSelector(event) {
 	    	fcjs_prev.style.pointerEvents='auto';
 	    	fcjs_prev.style.opacity=1;
 
-            fcjs_list.style.pointerEvents='auto';
-            fcjs_list.style.opacity=1;
+            // fcjs_list.style.pointerEvents='auto';
+            // fcjs_list.style.opacity=1;
 
 	    	// pause fontcylcer
     		clearInterval(fontCycle);
