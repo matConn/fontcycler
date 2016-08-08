@@ -12,7 +12,7 @@ var fcjs_contextMenu_inner = [
     '<a class="fcjs_prev"> &#9664;&#9664; </a>',
     '<a class="fcjs_play"> &#9658; </a>',
     '<a class="fcjs_pause"> &#10074;&#10074; </a>',
-    '<a class="fcjs_next"> &#9658;&#9658; </a>'
+    '<a class="fcjs_next"> &#9658;&#9658; </a>',
     // '<a class="fcjs_list"> &#9776; </a>',
     '</div>'
 ].join('');
