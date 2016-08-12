@@ -834,7 +834,7 @@ var fcjs_contextMenu_inner = [
     '<a class="fcjs_play"> &#9658; </a>',
     '<a class="fcjs_pause"> &#10074;&#10074; </a>',
     '<a class="fcjs_next"> &#9658;&#9658; </a>',
-    '<a class="fcjs_list"> &#9776; </a>',
+    // '<a class="fcjs_list"> &#9776; </a>',
     '</div>'
 ].join('');
 
@@ -849,26 +849,26 @@ document.getElementsByTagName('body')[0].appendChild(fcjs_hidden);
 // Font menu
 // ============
 
-var fcjs_fontMenu_inner = [];
+// var fcjs_fontMenu_inner = [];
 
-for(var i=0; i<fcjs_fonts.length; i++){
+// for(var i=0; i<fcjs_fonts.length; i++){
 
-    fcjs_fontMenu_inner.push(
-        '<p class="fcjs_fontMenu_item_'+i+'">'+
-            [i+1]+'. '+
-            String(fcjs_fonts[i]).replace(/\+/g,' ')+
-        '</p>'
-    );
+//     fcjs_fontMenu_inner.push(
+//         '<p class="fcjs_fontMenu_item_'+i+'">'+
+//             [i+1]+'. '+
+//             String(fcjs_fonts[i]).replace(/\+/g,' ')+
+//         '</p>'
+//     );
 
-}
+// }
 
-// font menu
-var fcjs_fontMenu = document.createElement('div');
-fcjs_fontMenu.setAttribute('class','fcjs_fontMenu');
-fcjs_fontMenu.innerHTML=fcjs_fontMenu_inner.join('');
+// // font menu
+// var fcjs_fontMenu = document.createElement('div');
+// fcjs_fontMenu.setAttribute('class','fcjs_fontMenu');
+// fcjs_fontMenu.innerHTML=fcjs_fontMenu_inner.join('');
 
-// append fontMenu
-document.getElementsByTagName('body')[0].appendChild(fcjs_fontMenu);
+// // append fontMenu
+// document.getElementsByTagName('body')[0].appendChild(fcjs_fontMenu);
 
 // get all elements with fcjs class
 var fcjs = document.getElementsByClassName('fcjs');
@@ -950,15 +950,15 @@ function fcjs_textSelector(event) {
     	fcjs_prev.style.pointerEvents='none';
     	fcjs_prev.style.opacity=0.5;
 
-        fcjs_list.style.pointerEvents='none';
-        fcjs_list.style.opacity=0.5;
+        // fcjs_list.style.pointerEvents='none';
+        // fcjs_list.style.opacity=0.5;
 
     	// increment fontcounter, display fonts
 		var fontCycle = setInterval(function(){
 			fontCounter++;
 			fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
 			fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
-		},500);
+		},300);
 
        	// pause btn fn
         fcjs_pause.addEventListener('click',function(){
@@ -972,8 +972,8 @@ function fcjs_textSelector(event) {
 	    	fcjs_prev.style.pointerEvents='auto';
 	    	fcjs_prev.style.opacity=1;
 
-            fcjs_list.style.pointerEvents='auto';
-            fcjs_list.style.opacity=1;
+            // fcjs_list.style.pointerEvents='auto';
+            // fcjs_list.style.opacity=1;
 
 	    	// pause fontcylcer
     		clearInterval(fontCycle);
