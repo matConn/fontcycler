@@ -30,26 +30,26 @@ document.getElementsByTagName('body')[0].appendChild(fcjs_hidden);
 // Font menu
 // ============
 
-var fcjs_fontMenu_inner = [];
+// var fcjs_fontMenu_inner = [];
 
-for(var i=0; i<fcjs_fonts.length; i++){
+// for(var i=0; i<fcjs_fonts.length; i++){
 
-    fcjs_fontMenu_inner.push(
-        '<p class="fcjs_fontMenu_item_'+i+'">'+
-            [i+1]+'. '+
-            String(fcjs_fonts[i]).replace(/\+/g,' ')+
-        '</p>'
-    );
+//     fcjs_fontMenu_inner.push(
+//         '<p class="fcjs_fontMenu_item_'+i+'">'+
+//             [i+1]+'. '+
+//             String(fcjs_fonts[i]).replace(/\+/g,' ')+
+//         '</p>'
+//     );
 
-}
+// }
 
-// font menu
-var fcjs_fontMenu = document.createElement('div');
-fcjs_fontMenu.setAttribute('class','fcjs_fontMenu');
-fcjs_fontMenu.innerHTML=fcjs_fontMenu_inner.join('');
+// // font menu
+// var fcjs_fontMenu = document.createElement('div');
+// fcjs_fontMenu.setAttribute('class','fcjs_fontMenu');
+// fcjs_fontMenu.innerHTML=fcjs_fontMenu_inner.join('');
 
-// append fontMenu
-document.getElementsByTagName('body')[0].appendChild(fcjs_fontMenu);
+// // append fontMenu
+// document.getElementsByTagName('body')[0].appendChild(fcjs_fontMenu);
 
 // get all elements with fcjs class
 var fcjs = document.getElementsByClassName('fcjs');
