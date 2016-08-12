@@ -834,7 +834,7 @@ var fcjs_contextMenu_inner = [
     '<a class="fcjs_play"> &#9658; </a>',
     '<a class="fcjs_pause"> &#10074;&#10074; </a>',
     '<a class="fcjs_next"> &#9658;&#9658; </a>',
-    // '<a class="fcjs_list"> &#9776; </a>',
+    '<a class="fcjs_list"> &#9776; </a>',
     '</div>'
 ].join('');
 
@@ -851,7 +851,6 @@ document.getElementsByTagName('body')[0].appendChild(fcjs_hidden);
 
 var fcjs_fontMenu_inner = [];
 
-fcjs_fontMenu_inner.push('<div class="fcjs_fontMenu_overlay"></div><div class="fcjs_fontMenu">');
 for(var i=0; i<fcjs_fonts.length; i++){
 
     fcjs_fontMenu_inner.push(
@@ -862,13 +861,10 @@ for(var i=0; i<fcjs_fonts.length; i++){
     );
 
 }
-fcjs_fontMenu_inner.push(
-    '</div>'
-    );
 
 // font menu
 var fcjs_fontMenu = document.createElement('div');
-fcjs_fontMenu.setAttribute('class','fcjs_fontMenu_wrapper');
+fcjs_fontMenu.setAttribute('class','fcjs_fontMenu');
 fcjs_fontMenu.innerHTML=fcjs_fontMenu_inner.join('');
 
 // append fontMenu
@@ -954,15 +950,15 @@ function fcjs_textSelector(event) {
     	fcjs_prev.style.pointerEvents='none';
     	fcjs_prev.style.opacity=0.5;
 
-        // fcjs_list.style.pointerEvents='none';
-        // fcjs_list.style.opacity=0.5;
+        fcjs_list.style.pointerEvents='none';
+        fcjs_list.style.opacity=0.5;
 
     	// increment fontcounter, display fonts
 		var fontCycle = setInterval(function(){
 			fontCounter++;
 			fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
 			fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
-		},700);
+		},500);
 
        	// pause btn fn
         fcjs_pause.addEventListener('click',function(){
@@ -976,8 +972,8 @@ function fcjs_textSelector(event) {
 	    	fcjs_prev.style.pointerEvents='auto';
 	    	fcjs_prev.style.opacity=1;
 
-            // fcjs_list.style.pointerEvents='auto';
-            // fcjs_list.style.opacity=1;
+            fcjs_list.style.pointerEvents='auto';
+            fcjs_list.style.opacity=1;
 
 	    	// pause fontcylcer
     		clearInterval(fontCycle);

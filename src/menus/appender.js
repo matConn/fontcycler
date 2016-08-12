@@ -32,7 +32,6 @@ document.getElementsByTagName('body')[0].appendChild(fcjs_hidden);
 
 var fcjs_fontMenu_inner = [];
 
-fcjs_fontMenu_inner.push('<div class="fcjs_fontMenu_overlay"></div><div class="fcjs_fontMenu">');
 for(var i=0; i<fcjs_fonts.length; i++){
 
     fcjs_fontMenu_inner.push(
@@ -43,13 +42,10 @@ for(var i=0; i<fcjs_fonts.length; i++){
     );
 
 }
-fcjs_fontMenu_inner.push(
-    '</div>'
-    );
 
 // font menu
 var fcjs_fontMenu = document.createElement('div');
-fcjs_fontMenu.setAttribute('class','fcjs_fontMenu_wrapper');
+fcjs_fontMenu.setAttribute('class','fcjs_fontMenu');
 fcjs_fontMenu.innerHTML=fcjs_fontMenu_inner.join('');
 
 // append fontMenu

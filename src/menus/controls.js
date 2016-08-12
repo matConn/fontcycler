@@ -56,15 +56,15 @@ function fcjs_textSelector(event) {
     	fcjs_prev.style.pointerEvents='none';
     	fcjs_prev.style.opacity=0.5;
 
-        // fcjs_list.style.pointerEvents='none';
-        // fcjs_list.style.opacity=0.5;
+        fcjs_list.style.pointerEvents='none';
+        fcjs_list.style.opacity=0.5;
 
     	// increment fontcounter, display fonts
 		var fontCycle = setInterval(function(){
 			fontCounter++;
 			fcjs_active.style.fontFamily=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
 			fcjs_fontName.innerHTML=String(fcjs_fonts[fontCounter]).replace(/\+/g,' ');
-		},700);
+		},500);
 
        	// pause btn fn
         fcjs_pause.addEventListener('click',function(){
@@ -78,8 +78,8 @@ function fcjs_textSelector(event) {
 	    	fcjs_prev.style.pointerEvents='auto';
 	    	fcjs_prev.style.opacity=1;
 
-            // fcjs_list.style.pointerEvents='auto';
-            // fcjs_list.style.opacity=1;
+            fcjs_list.style.pointerEvents='auto';
+            fcjs_list.style.opacity=1;
 
 	    	// pause fontcylcer
     		clearInterval(fontCycle);
