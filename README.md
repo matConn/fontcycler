@@ -15,6 +15,6 @@ font cycling demo: http://codepen.io/mattConn/pen/KMgQZG?editors=1011
 
 **Pending functionality:**
 
-*Display list of fonts to choose from.
-*Google Fonts API, search and sort functionality.
-*Change font cycling speed.
+* Display list of fonts to choose from.
+* Google Fonts API, search and sort functionality.
+* Change font cycling speed.
