@@ -9,14 +9,14 @@ var rename = require('gulp-rename');
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return gulp.src('src/context_menu/*.scss')
+    return gulp.src('src/menus/*.scss')
         .pipe(sass())
         .pipe(gulp.dest('public'));
 });
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src(['src/*.js','src/context_menu/*.js'])
+    return gulp.src(['src/*.js','src/menus/*.js'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest('public'))
         .pipe(rename('app.min.js'))

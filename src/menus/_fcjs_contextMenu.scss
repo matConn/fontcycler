@@ -8,7 +8,7 @@
 
 .fcjs_contextMenu {
 	position: absolute;
-	border: solid 1px grey;
+	border: $border;
 	background-color: white;
 	padding: 10px;
 	font-family: sans-serif !important;
@@ -30,8 +30,8 @@
 		height: 10px;
 		transform: rotate(45deg) translateX(-50%);
 		background-color: white;
-		border-top: solid 1px grey;
-		border-left: solid 1px grey;
+		border-top: $border;
+		border-left: $border;
 		position: absolute;
 		top: -2px;
 	    left: 50%;
@@ -54,6 +54,7 @@
 	text-align: center;
 	color: black;
 	margin: 0 !important;
+	margin-bottom: 0.5em !important;
 
 	&::selection {
 		background: none;

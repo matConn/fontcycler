@@ -1,0 +1,18 @@
+.fcjs_hidden{
+	display: none;
+}
+
+.fcjs {
+	cursor: context-menu;
+}
+
+$grey: #ccc;
+
+$border: solid 1px $grey;
+
+%menuStyles {
+	font-family: sans-serif !important;
+}
+
+@import  '_fcjs_contextMenu';
+@import '_fcjs_fontMenu';
