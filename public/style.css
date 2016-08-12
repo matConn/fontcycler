@@ -4,7 +4,7 @@
 .fcjs {
   cursor: context-menu; }
 
-.fcjs_fontMenu {
+.fcjs_fontMenu, .fcjs_fontMenu_wrapper, .fcjs_fontMenu_overlay {
   font-family: sans-serif !important; }
 
 .fcjs_hidden {
@@ -75,13 +75,31 @@
 .fcjs_pause {
   display: none; }
 
-.fcjs_fontMenu {
+.fcjs_fontMenu, .fcjs_fontMenu_wrapper, .fcjs_fontMenu_overlay {
   width: 30%;
   height: 50%;
   overflow: scroll;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%);
+  transform: translate(-50%, -50%);
   padding: 1em;
-  border: solid 1px #ccc; }
+  border: solid 1px #ccc;
+  background-color: white; }
+
+.fcjs_fontMenu_wrapper, .fcjs_fontMenu_overlay {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  transform: initial;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  bottom: initial;
+  right: initial; }
+
+.fcjs_fontMenu_overlay {
+  background-color: #ccc;
+  opacity: 0.5; }
